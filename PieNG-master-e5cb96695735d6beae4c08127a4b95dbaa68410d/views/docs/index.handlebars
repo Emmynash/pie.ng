@@ -1,0 +1,266 @@
+
+{{> header }}
+<!-- Header -->
+    <header class="header header-inverse" style="background-color: #243949;">
+      <div class="container text-center">
+
+        <div class="row">
+          <div class="col-12 col-lg-8 offset-lg-2">
+
+            <h1>Pie.NG API Documentation</h1>
+            <p class="fs-20 opacity-70">A simple readable guide to integrating Pie.NG</p>
+
+          </div>
+        </div>
+
+      </div>
+    </header>
+    <!-- END Header -->
+
+
+
+
+    <!-- Main container -->
+    <main class="main-content">
+
+    <section class="section bg-gray" id="section-vtab">
+        <div class="container">
+          <div class="row gap-5">
+            
+
+            <div class="col-12 col-md-4">
+              <ul class="nav nav-vertical">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#getting-started">
+                    <h6>Introduction</h6>
+                    <p>Getting started</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#parameters">
+                    <h6>Payment Parameters</h6>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#inline">
+                    <h6>Payment</h6>
+                    <p>Inline Payment</p>
+                  </a>
+                </li>
+                {{!--<li class="nav-item">--}}
+                {{!--  <a class="nav-link" data-toggle="tab" href="#messages-2">--}}
+                {{!--    <h6>Message</h6>--}}
+                {{!--    <p>Some description about tab</p>--}}
+                {{!--  </a>--}}
+                {{!--</li>--}}
+                {{!--<li class="nav-item">--}}
+                {{!--  <a class="nav-link" data-toggle="tab" href="#settings-2">--}}
+                {{!--    <h6>Settings</h6>--}}
+                {{!--    <p>Some description about tab</p>--}}
+                {{!--  </a>--}}
+                {{!--</li>--}}
+                
+              </ul>
+            </div>
+
+
+            <div class="col-12 col-md-8">
+              <div class="tab-content">
+
+                <div class="tab-pane fade show active" id="getting-started">
+                  <header class="section-header" style="margin-bottom: 0px">
+                    <h2>Introduction</h2>
+                    <hr />
+                  </header>
+                  Welcome to Pie.NG. Get started by <a href="/dashboard/account/sign-up">creating a Pie.NG account</a> if you don't have one already.
+                  After creating your account, you can get get your API keys from the settings section of your dashboard when you login. 
+                  Test keys have a prefix of <code>pk_</code> and <code>sk_</code> while live keys have the prefix <code>pklv_</code> and <code>sklv_</code>. 
+                  Switching between live and test modes data is as simple as clicking the <button class="btn btn-xs">Live Data</button> or <button class="btn btn-xs">Test Data</button>
+                  on the top bar of your dashboard.<br /><br />
+                  <div class="row">
+                    <div class="col-12 col-md-4 col-xl-4 text-center">
+                      <p class="fs-50 text-success"><i class="ti-layout"></i></p>
+                      <h6 class="fw-600 text-uppercase letter-spacing-2 mb-2">CMS</h6>
+                      <p>Coming Soon</p>
+                    </div>
+                    <div class="col-12 col-md-4 col-xl-4 text-center">
+                      <p class="fs-50 text-primary"><i class="ti-panel"></i></p>
+                      <h6 class="fw-600 text-uppercase letter-spacing-2 mb-2">Web Frameworks</h6>
+                      <p>Coming Soon</p>
+                    </div>
+                    <div class="col-12 col-md-4 col-xl-4 text-center">
+                      <p class="fs-50 text-danger"><i class="ti-mobile"></i></p>
+                      <h6 class="fw-600 text-uppercase letter-spacing-2 mb-2">Mobile</h6>
+                      <p><a href="https://npmjs.com/package/pie-react-native">React Native</a><br />More Coming</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="parameters">
+                  <header class="section-header" style="margin-bottom: 0px">
+                    <h2>Payment Parameters</h2>
+                    <hr />
+                  </header>
+                  <p>The following parameters are expected by Pie.NG when attempting to receive payment from an application. 
+                  Parames marked with <span class="text-danger">*</span> are required and must be passed</p>
+                  
+                  <h4>Public Key<span class="text-danger">*</span></h4>
+                  <p>Pie.NG expects a <code>publicKey</code> to be passed to it when attempting to receive payment. 
+                  You can obtain your publicKey from the settings tab on your dashboard</p>
+                  
+                  <h4>Customer<span class="text-danger">*</span></h4>
+                  <p><code>cutomer</code> should be a unique identifier for your customer formated like an email. 
+                  Popular formats are <code>&lt;username&gt;@your.domain.tld</code> or <code>&lt;customerId&gt;@your.domain.tld</code> 
+                  or any form of unique identification for the customer</p>
+                  
+                  <h4>Amount<span class="text-danger">*</span></h4>
+                  <p><code>amount</code> refers to how much you wish to charge your customers in NGN.</p>
+                  
+                  <h4>Wallet</h4>
+                  <p><code>wallet</code> is the wallet id or wallet name of the wallet you want credited with <code>amount</code>. 
+                  When not specified, your default wallet will be used instead</p>
+                  
+                  <h4>Narration</h4>
+                  <p>A description of the service the user is paying for is often okay for <code>narration</code>. 
+                  A narrations are a good for audits for you and your customers</p>
+                  
+                  <h4>Transaction Reference</h4>
+                  <p>You can pass your transaction reference with the <code>reference</code> parameter. 
+                  References are very useful if you intend to keep your own accounting system. 
+                  Your passed <code>reference</code> does not replace Pie.NG's transaction reference</p>
+                  
+                  <h4>Commission</h4>
+                  <p>If you wish to collect a seperate commission or split your total payment into two, use <code>commission</code> 
+                  to pass a second amount that will be combined with <code>amount</code> and charged at once. Some people use 
+                  <code>commission</code> to specify service charge.</p>
+                  
+                  <h4>Commission Wallet</h4>
+                  <p>If you wish to collect a seperate commission or split your total payment into two, use <code>commission</code> 
+                  to pass a second amount that will be combined with <code>amount</code> and charged at once. Some people use 
+                  <code>commission</code> to specify service charge.</p>
+                </div>
+
+                <div class="tab-pane fade" id="inline">
+                  <header class="section-header" style="margin-bottom: 0px">
+                    <h2>Inline</h2>
+                    <hr />
+                  </header>
+                  Integrating Pie.NG into new and existing tasks is as simple as booting a computer. 
+                  Once your API keys are ready, integration can simply be done by including the Pie.NG Payment.js 
+                  into your website and you are half done. A sample integration can be seen below<br /><br />
+                  <div class="row gap-y">
+                    <div class="col-12 text-right">
+                      <ul class="nav nav-tabs nav-outline" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#preview" role="tab">Preview</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" data-toggle="tab" href="#markup" role="tab">Markup</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#css" role="tab">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" data-toggle="tab" href="#javascript" role="tab">Javascript</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content inner-tab">
+                      <div class="tab-pane" id="preview" role="tabpanel" style="min-height: 250px">
+                        <script type="text/javascript" src="https://pie.ng/js"></script>
+                        <form method="post" action="/your-server-side-code" id="targetForm">
+                          <input type="hidden" id="amount" value="500" />
+                          <input type="hidden" id="publicKey" value="pklv_GDX0J8puxiQk7kxH" />
+                          <input type="hidden" id="customer" value="demo@pie.ng" />
+                          <input type="hidden" id="publicKey" value="pklv_GDX0J8puxiQk7kxH" />
+                          <input type="hidden" id="narration" value="Payment Example" />
+                          <input type="hidden" id="reference" value="001" />
+                          <button class="pie-payment-btn" type="submit" align-self-center>PAY</button>
+                        </form>
+                        <style type="text/css">
+                        .pie-payment-btn {
+                          background: #0facf3;
+                          border-color: #0facf3;
+                          color: #fff;
+                          font-weight: 600;
+                          font-size: 11px;
+                          padding: 7px 26px;
+                          line-height: inherit;
+                          letter-spacing: 1.7px;
+                          text-transform: uppercase;
+                          border-radius: 2px;
+                          outline: none;
+                          -webkit-transition: 0.15s linear;
+                          transition: 0.15s linear;
+                          display: inline-block;
+                          text-align: center;
+                          vertical-align: middle;
+                          -webkit-user-select: none;
+                          user-select: none;
+                          border: 1px solid transparent;
+                          white-space: nowrap;
+                          -ms-touch-action: manipulation;
+                          touch-action: manipulation;
+                          text-decoration: none;
+                        }
+                        </style>
+                        <script type="text/javascript">
+                          var $form = document.querySelector("#targetForm");
+                          var callPieNG = function(e) {
+                            e.preventDefault()
+                            Pie.setup({
+                          		amount: document.querySelector('#amount').value,
+                          		customer: document.querySelector('#customer').value,
+                          		publicKey: document.querySelector('#publicKey').value,
+                          		commission: document.querySelector('#commission').value,
+                          		narration: document.querySelector('#narration').value,
+                          		reference: document.querySelector('#reference').value,
+                          		inclusive: false,
+                          		commissionWallet: document.querySelector('#commissionWallet').value,
+                          		loader: function() {
+                          			console.log("display progress for your user here");
+                              },
+                              unloader: function(){
+                                console.log("hide progress for your user");
+                              },
+                              callback: function(response) {
+                                // Function to be called when payment is completed or fails
+                              },
+                              form: $form,
+                            }).openIframe();
+                          }
+                        
+                          if($form.addEventListener) {
+                            $form.addEventListener('submit', callPieNG, false) // Modern browsers
+                          } else if($form.attachEvent) {
+                            $form.attachEvent('onsubmit', callPieNG) // Old IE
+                          }
+                        </script>
+                      </div>
+                      <div class="tab-pane active show" id="markup" role="tabpanel"><pre class="line-numbers" style="width: 100%; max-height: 250px; overflow: auto;"><code class="language-markup">{{htmlCode}}</code></pre></div>
+                      <div class="tab-pane" id="css" role="tabpanel"><pre class="line-numbers" style="width: 100%; max-height: 250px; overflow: auto;"><code class="language-css">{{cssCode}}</code></pre></div>
+                      <div class="tab-pane" id="javascript" role="tabpanel"><pre class="line-numbers" style="width: 100%; max-height: 250px; overflow: auto;"><code class="language-javascript">{{jsCode}}</code></pre></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </section>
+    </main>
+    <style type="text/css">
+      .inner-tab {
+        width: 100% !important;
+      }
+    </style>
+    <!-- END Main container -->
+     
+     
+    {{> footer }}

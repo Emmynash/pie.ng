@@ -1,0 +1,50 @@
+@import url("../../assets/css/bootstrap.min.css");
+@import url("../../assets/css/icons.css");
+@import url("../../assets/css/style.css");
+
+a {
+  cursor: pointer;
+}
+a.disabled {
+  cursor: crosshair;
+}
+.react-datepicker__input-container input {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+.container {
+  max-width: 100% !important;
+}
+.sentence-case {
+  text-transform: capitalize !important;
+}

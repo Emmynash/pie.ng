@@ -1,0 +1,265 @@
+
+    {{> header }}
+    
+
+    <!-- Header background-color: #4f407b -->
+    <header class="{{headerClass}}" style="{{headerStyle}}">
+      <canvas class="constellation"></canvas>
+
+      <div class="container">
+        <div class="row h-full">
+          <div class="col-12 text-center align-self-center">
+            <h1 class="fs-50 fw-600 lh-15 hidden-sm-down">Payment for <span class="text-primary" data-type="Mama Put, Entrepreneurs, Tomato Sellers, Everyday Use"></span></h1>
+            <h1 class="fs-35 fw-600 lh-15 hidden-md-up">Payment for<br><span class="text-primary" data-type="Mama Put, Entrepreneurs, Tomato Sellers, Everyday Use"></span></h1>
+            {{!--<br>--}}
+            <p class="fs-20 hidden-sm-down"><strong>Pie.NG</strong>, The Nigerian Way to Pay</p>
+            <p class="fs-16 hidden-md-up"><strong>Pie.NG</strong>, The Nigerian Way to Pay</p>
+            <hr class="w-60 hidden-sm-down">
+            <div class="col-12 col-md-4 offset-md-4">
+                <form id="formTarget" class="py-30">
+                    <input type="hidden" id="customer" value="demo@pie.ng" />
+                    <input type="hidden" id="publicKey" value="pklv_GDX0J8puxiQk7kxH" />
+                    <input type="hidden" id="narration" value="Payment Example" />
+                    <input type="hidden" id="reference" value="001" />
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">Amount (₦)</span>
+                        <input type="text" placeholder="Amount" id="amount" value="500" class="form-control" required />
+                    </div>
+                    <div class="form-group input-group hidden-advanced hidden-xl-down">
+                        <span class="input-group-addon">Split Commission (₦)</span>
+                        <input type="text" placeholder="Split Commission" id="commission" value="100" class="form-control" required />
+                    </div>
+                    <div class="form-group input-group hidden-advanced hidden-xl-down">
+                        <span class="input-group-addon">Commission Wallet</span>
+                        <input type="text" placeholder="Split Commission Wallet" id="commissionWallet" value="default" class="form-control" required />
+                    </div>
+                    <div class="form-group hidden-advanced hidden-xl-down">
+                        <select class="form-control" id="toggle-livemode">
+                          <option value="true" selected>Live mode</option>
+                          <option value="false">Test mode</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary">Test Payment</button>
+                </form>
+            </div>
+            <p class="mt-2 mt-md-4"><a id="toggle-advance" style="cursor: pointer"><small>Show advanced controls</small></a></p>
+          </div>
+
+          <div class="col-12 align-self-end text-center pb-70">
+            <a class="scroll-down-2 scroll-down-inverse" href="#" data-scrollto="section-demo"><span></span></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END Header -->
+
+    
+    {{!--<!-- Main container -->--}}
+    <main class="main-content">
+
+
+    {{!--  <section class="section">--}}
+    {{!--    <div class="container">--}}
+    {{!--      <header class="section-header">--}}
+    {{!--        <small>Products</small>--}}
+    {{!--        <h2>Working together is better</h2>--}}
+    {{!--        <hr>--}}
+    {{!--        <p class="lead">Our products allow businesses to be more reliable, flexible, and scalable. They help improve communication and make sense of massive amounts of data.</p>  --}}
+    {{!--      </header>--}}
+
+
+    {{!--      <div class="row gap-y">--}}
+
+    {{!--        <div class="col-6 col-md-4 col-xl-2">--}}
+    {{!--          <div class="card card-bordered card-hover-shadow text-center">--}}
+    {{!--            <a class="card-block" href="#">--}}
+    {{!--              <p style="color: #78a300"><i class="icon-lightbulb fs-50"></i></p>--}}
+    {{!--              <h5 class="card-title">Support</h5>--}}
+    {{!--            </a>--}}
+    {{!--          </div>--}}
+    {{!--        </div>--}}
+
+
+    {{!--        <div class="col-6 col-md-4 col-xl-2">--}}
+    {{!--          <div class="card card-bordered card-hover-shadow text-center">--}}
+    {{!--            <a class="card-block" href="#">--}}
+    {{!--              <p style="color: #eb4a62"><i class="icon-book-open fs-50"></i></p>--}}
+    {{!--              <h5 class="card-title">Guide</h5>--}}
+    {{!--            </a>--}}
+    {{!--          </div>--}}
+    {{!--        </div>--}}
+
+
+    {{!--        <div class="col-6 col-md-4 col-xl-2">--}}
+    {{!--          <div class="card card-bordered card-hover-shadow text-center">--}}
+    {{!--            <a class="card-block" href="#">--}}
+    {{!--              <p style="color: #f69a3e"><i class="icon-chat fs-50"></i></p>--}}
+    {{!--              <h5 class="card-title">Chat</h5>--}}
+    {{!--            </a>--}}
+    {{!--          </div>--}}
+    {{!--        </div>--}}
+
+
+    {{!--        <div class="col-6 col-md-4 col-xl-2">--}}
+    {{!--          <div class="card card-bordered card-hover-shadow text-center">--}}
+    {{!--            <a class="card-block" href="#">--}}
+    {{!--              <p style="color: #f0c93e"><i class="icon-mic fs-50"></i></p>--}}
+    {{!--              <h5 class="card-title">Talk</h5>--}}
+    {{!--            </a>--}}
+    {{!--          </div>--}}
+    {{!--        </div>--}}
+
+
+    {{!--        <div class="col-6 col-md-4 col-xl-2">--}}
+    {{!--          <div class="card card-bordered card-hover-shadow text-center">--}}
+    {{!--            <a class="card-block" href="#">--}}
+    {{!--              <p style="color: #37b8af"><i class="icon-envelope fs-50"></i></p>--}}
+    {{!--              <h5 class="card-title">Message</h5>--}}
+    {{!--            </a>--}}
+    {{!--          </div>--}}
+    {{!--        </div>--}}
+
+
+    {{!--        <div class="col-6 col-md-4 col-xl-2">--}}
+    {{!--          <div class="card card-bordered card-hover-shadow text-center">--}}
+    {{!--            <a class="card-block" href="#">--}}
+    {{!--              <p style="color: #2faabc"><i class="icon-piechart fs-50"></i></p>--}}
+    {{!--              <h5 class="card-title">Explore</h5>--}}
+    {{!--            </a>--}}
+    {{!--          </div>--}}
+    {{!--        </div>--}}
+
+    {{!--      </div>--}}
+
+    {{!--    </div>--}}
+    {{!--  </section>--}}
+
+
+
+
+    {{!--  <!----}}
+    {{!--  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒--}}
+    {{!--  | Watch a wideo--}}
+    {{!--  |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒--}}
+    {{!--  !-->--}}
+    {{!--  <section class="section text-center py-120" style="background-image: url(assets/img/bg-gift.jpg)" data-overlay="6">--}}
+    {{!--    <div class="container">--}}
+    {{!--      <h5 class="fs-30 text-white fw-300 mb-90"><strong>Start</strong> the supporting system that you always dreamed about</h5>--}}
+    {{!--      <p><a class="btn btn-xl btn-round btn-success w-250" href="https://www.youtube.com/watch?v=ah4pcPbRi2M" data-provide="lightbox">Watch a video</a></p>--}}
+    {{!--    </div>--}}
+    {{!--  </section>--}}
+
+
+
+
+
+      <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Feature
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+      <section class="section">
+        <div class="container">
+          
+          <div class="row gap-y align-items-center">
+            <div class="col-12 offset-lg-1 col-lg-5 text-center">
+              <video class="w-300" autoplay loop>
+                <source src="//d1eipm3vz40hy0.cloudfront.net/images/p-home/Heart.webm" type="video/webm">
+                <source src="//d1eipm3vz40hy0.cloudfront.net/images/p-home/Heart.mp4" type="video/mp4">
+                <source src="//d1eipm3vz40hy0.cloudfront.net/images/p-home/Heart.ogv" type="video/ogg">
+              </video>
+            </div>
+
+            <div class="col-12 offset-lg-1 col-lg-4 text-center text-lg-left">
+              <h3>Make your revenue collection seemless</h3>
+              <p class="lead">Reduce friction in revenue collection significantly with our inline payment dialogue that both easy to integrate and hopelessly simple to use.</p>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row gap-y align-items-center">
+            <div class="col-12 offset-lg-1 col-lg-4 text-center text-lg-left">
+              <h3>Insightful analytics</h3>
+              <p class="lead">Know your daily growth rate and see your customer's spending patterns with our beautifully crafted dashboard. Data visualization cannot be simpler!</p>
+            </div>
+
+            <div class="col-12 offset-lg-2 col-lg-5 text-center">
+              <video class="w-300" autoplay loop>
+                <source src="//d1eipm3vz40hy0.cloudfront.net/images/p-home/ExploreTower.webm" type="video/webm">
+                <source src="//d1eipm3vz40hy0.cloudfront.net/images/p-home/ExploreTower.mp4" type="video/mp4">
+                <source src="//d1eipm3vz40hy0.cloudfront.net/images/p-home/ExploreTower.ogv" type="video/ogg">
+              </video>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+      <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Signup
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+      <section class="section bg-gray">
+        <div class="container">
+          
+          <h3 class="text-center fw-300"><strong>Trusted</strong> by several organisations to deliver unparalleled experience</h3>
+          <br><br>
+
+          <div class="row gap-y">
+            <div class="col-12 col-md-6 col-lg-2 offset-lg-4">
+              <a class="btn btn-block btn-success" href="/dashboard/account/sign-up">Get Started</a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-2">
+              <a class="btn btn-block btn-primary" href="/docs">Explore Docs</a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!--
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      | Partner 3
+      |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
+      !-->
+      <section class="section bg-gray py-40">
+        <div class="container">
+          {{!--<header class="section-header">--}}
+          {{!--  <h2>Partners</h2>--}}
+          {{!--  <hr>--}}
+          {{!--  <p class="lead">Our Partners include state governments and private companies</p>--}}
+          {{!--</header>--}}
+
+          <div class="swiper-container partner" data-autoplay="1000" data-slides-per-view="4">
+            <div class="swiper-wrapper pb-0">
+              <div class="swiper-slide">
+                <img src="/static/img/clients/evas.png" alt="Westpoint Consult's Electronic Vehicle Administration Service">
+              </div>
+              <div class="swiper-slide">
+                <img src="/static/img/clients/imo.png" alt="Imo State Board of Internal Revenue">
+              </div>
+              <div class="swiper-slide">
+                <img src="/static/img/clients/niger.png" alt="Niger State Ministry of Transport">
+              </div>
+              <div class="swiper-slide">
+                <img src="/static/img/clients/nHub.png" alt="nHub Nigeria">
+              </div>
+              {{!--<div class="swiper-slide">--}}
+              {{!--  <img src="/static/img/clients/flutterwave.png" alt="Flutterwave">--}}
+              {{!--</div>--}}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+    {{!--<!-- END Main container -->--}}
+    
+    {{> footer }}

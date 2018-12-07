@@ -1,0 +1,251 @@
+.btn {
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  transition: 0.1s linear;
+  -webkit-transition: 0.1s linear;
+  -moz-transition: 0.1s linear;
+  border-radius: 6px;
+  padding-top: 0.46428571em;
+  padding-bottom: 0.46428571em;
+  padding-right: 2.78571429em;
+  padding-left: 2.78571429em;
+  border: 1px solid #252525;
+  border-width: 1px;
+  font-size: inherit;
+  line-height: 1.85714286em;
+}
+
+.btn .btn__text,
+.btn i {
+  color: #252525;
+  border-color: #252525;
+  font-weight: 700;
+  font-size: 0.85714286em;
+}
+
+.btn[class*='col-'] {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.btn:active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.btn.bg--facebook,
+.btn.bg--twitter,
+.btn.bg--instagram,
+.btn.bg--googleplus,
+.btn.bg--pinterest,
+.btn.bg--dribbble,
+.btn.bg--behance,
+.btn.bg--dark {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.btn.bg--facebook .btn__text,
+.btn.bg--twitter .btn__text,
+.btn.bg--instagram .btn__text,
+.btn.bg--googleplus .btn__text,
+.btn.bg--pinterest .btn__text,
+.btn.bg--dribbble .btn__text,
+.btn.bg--behance .btn__text,
+.btn.bg--dark .btn__text {
+  color: #fff;
+}
+
+.btn.bg--facebook .btn__text i,
+.btn.bg--twitter .btn__text i,
+.btn.bg--instagram .btn__text i,
+.btn.bg--googleplus .btn__text i,
+.btn.bg--pinterest .btn__text i,
+.btn.bg--dribbble .btn__text i,
+.btn.bg--behance .btn__text i,
+.btn.bg--dark .btn__text i {
+  color: #fff;
+}
+
+.btn.bg--facebook:hover,
+.btn.bg--twitter:hover,
+.btn.bg--instagram:hover,
+.btn.bg--googleplus:hover,
+.btn.bg--pinterest:hover,
+.btn.bg--dribbble:hover,
+.btn.bg--behance:hover,
+.btn.bg--dark:hover {
+  opacity: .9;
+}
+
+.btn.bg--error {
+  background: #e23636;
+  border-color: #e23636 !important;
+}
+
+.btn.bg--error:hover {
+  background: #e54c4c;
+  border-color: #e54c4c !important;
+  color: #fff !important;
+}
+
+.btn.bg--error .btn__text {
+  color: #fff;
+}
+
+.btn.bg--error .btn__text i {
+  color: #fff;
+}
+
+@media all and (min-width: 768px) {
+  .btn+.btn {
+    margin-left: 1.85714286em;
+  }
+}
+
+.btn:first-child {
+  margin-left: 0;
+}
+
+.btn:last-child {
+  margin-right: 0;
+}
+
+.btn--xs {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 1.39285714em;
+  padding-left: 1.39285714em;
+}
+
+.btn--sm {
+  padding-top: 0.30952381em;
+  padding-bottom: 0.30952381em;
+  padding-right: 1.85714286em;
+  padding-left: 1.85714286em;
+}
+
+.btn--lg {
+  padding-top: 0.58035714em;
+  padding-bottom: 0.58035714em;
+  padding-right: 3.48214286em;
+  padding-left: 3.48214286em;
+}
+
+.btn--lg .btn__text {
+  font-size: 1.07142857em;
+}
+
+.btn--primary,
+.btn--primary:visited {
+  background: #4a90e2;
+  border-color: #4a90e2;
+}
+
+.btn--primary .btn__text,
+.btn--primary:visited .btn__text {
+  color: #fff;
+}
+
+.btn--primary .btn__text i,
+.btn--primary:visited .btn__text i {
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #609de6;
+}
+
+.btn--primary:active {
+  background: #3483de;
+}
+
+.btn--primary-1,
+.btn--primary-1:visited {
+  background: #31639c;
+  border-color: #31639c;
+}
+
+.btn--primary-1 .btn__text,
+.btn--primary-1:visited .btn__text {
+  color: #fff;
+}
+
+.btn--primary-1:hover {
+  background: #376faf;
+}
+
+.btn--primary-1:active {
+  background: #2b5789;
+}
+
+.btn--primary-2,
+.btn--primary-2:visited {
+  background: #465773;
+  border-color: #465773;
+}
+
+.btn--primary-2 .btn__text,
+.btn--primary-2:visited .btn__text {
+  color: #fff;
+}
+
+.btn--primary-2:hover {
+  background: #506383;
+}
+
+.btn--primary-2:active {
+  background: #3c4b63;
+}
+
+.btn--secondary {
+  background: #fafafa;
+  border-color: #fafafa;
+}
+
+.btn--secondary:hover {
+  background: #ffffff;
+}
+
+.btn--secondary:active {
+  background: #f5f5f5;
+}
+
+.btn--white {
+  background: #fff;
+  color: #252525;
+  border-color: #fff;
+}
+
+.btn--white i {
+  color: #252525;
+}
+
+.btn--transparent {
+  background: none;
+  border-color: rgba(0, 0, 0, 0);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn--transparent.btn--white .btn__text {
+  color: #fff;
+}
+
+.btn--unfilled {
+  background: none;
+}
+
+.btn--unfilled.btn--white .btn__text {
+  color: #fff;
+}
+
+.btn--unfilled.btn--white i {
+  color: #fff;
+}
+
+.btn--floating {
+  position: fixed;
+  bottom: 3.71428571em;
+  right: 3.71428571em;
+  z-index: 10;
+}
+

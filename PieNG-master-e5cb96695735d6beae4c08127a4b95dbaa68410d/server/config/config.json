@@ -1,0 +1,16 @@
+{
+  development: {
+    username: '',
+    password: '',
+    database: '',
+    host: '',
+    dialect: ''
+  },
+  test: {
+    username: '',
+    password: '',
+    database: '',
+    host: '',
+    dialect: 'mysql'
+  }
+}
