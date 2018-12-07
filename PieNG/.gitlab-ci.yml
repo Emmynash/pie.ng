@@ -1,0 +1,65 @@
+image: node:6.11.2
+
+variables:
+  POSTGRES_USER: testuser
+  POSTGRES_PASSWORD: testpass
+  
+cache:
+  paths:
+  - node_modules/
+  - dist/
+
+stages:
+  - test
+  - deploy
+
+
+before_script:
+  - npm install
+
+test:
+  variables:
+    POSTGRES_USER: testuser
+    POSTGRES_PASSWORD: testpass
+    MYSQL_DATABASE: testdb
+    MYSQL_ROOT_PASSWORD: testpass
+    NODE_ENV: test
+    PORT: 8080
+    DBMS: mysql
+    DATABASE_URL: mysql://root:testpass@mysql/testdb
+  services:
+  - postgres:9.5.0
+  - mysql:5.7.20
+  stage: test
+  script:
+   - npm run test
+
+deploy_test:
+  stage: deploy
+  script:
+    - echo "Deploy to test server"
+  environment:
+    name: test
+    url: https://test.pie.ng
+  only:
+  - dev
+  
+deploy_staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: staging
+    url: https://staging.pie.ng
+  only:
+  - staging
+  
+deploy_production:
+  stage: deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://pie.ng
+  only:
+  - master

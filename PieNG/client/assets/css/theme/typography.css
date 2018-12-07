@@ -1,0 +1,186 @@
+html {
+  font-size: 87.5%;
+}
+
+@media all and (max-width: 768px) {
+  html {
+    font-size: 81.25%;
+  }
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.85714286em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  color: #666666;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+  color: #252525;
+  font-weight: 300 !important;
+  font-variant-ligatures: common-ligatures;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1,
+.h1 {
+  font-size: 3.14285714em !important;
+  line-height: 1.31818182em !important;
+}
+
+h2,
+.h2 {
+  font-size: 2.35714286em;
+  line-height: 1.36363636em;
+}
+
+h3,
+.h3 {
+  font-size: 1.78571429em;
+  line-height: 1.5em;
+}
+
+h4,
+.h4 {
+  font-size: 1.35714286em;
+  line-height: 1.36842105em;
+}
+
+h5,
+.h5 {
+  font-size: 1em;
+  line-height: 1.85714286em;
+}
+
+h6,
+.h6 {
+  font-size: 0.85714286em;
+  line-height: 2.16666667em;
+}
+
+.lead {
+  font-size: 1.35714286em;
+  line-height: 1.68421053em;
+}
+
+@media all and (max-width: 767px) {
+  h1,
+  .h1 {
+    font-size: 2.35714286em;
+    line-height: 1.36363636em;
+  }
+  h2,
+  .h2 {
+    font-size: 1.78571429em;
+    line-height: 1.5em;
+  }
+  h3,
+  .h3 {
+    font-size: 1.35714286em;
+    line-height: 1.85714286em;
+  }
+  .lead {
+    font-size: 1.35714286em;
+    line-height: 1.36842105em;
+  }
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-bottom: 1.85714286em;
+}
+
+ul,
+ol {
+  list-style: none;
+  line-height: 1.85714286em;
+}
+
+ul.bullets {
+  list-style: inside;
+}
+
+ol {
+  list-style-type: upper-roman;
+  list-style-position: inside;
+}
+
+blockquote {
+  font-size: 1.78571429em;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0;
+  border-left: 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+hr {
+  margin: 1.85714286em 0;
+  border-color: #fafafa;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+
+/*! Typography -- Helpers */
+
+.type--fade {
+  opacity: .5;
+}
+
+.type--uppercase {
+  text-transform: uppercase;
+}
+
+.type--bold {
+  font-weight: bold;
+}
+
+.type--italic {
+  font-style: italic;
+}
+
+.type--fine-print {
+  font-size: 0.85714286em;
+}
+
+.type--strikethrough {
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+.type--underline {
+  text-decoration: underline;
+}
+
+.type--body-font {
+  font-family: 'Open Sans', 'Helvetica';
+}
